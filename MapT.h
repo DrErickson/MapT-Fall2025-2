@@ -15,6 +15,7 @@ template<class K, class T>
 class MapT {
 public:
     MapT();
+    explicit MapT(int numBuck);
 
     void Add(K key, T value);
     void Remove(K key);
@@ -25,6 +26,7 @@ public:
     void Rehash(int numBuckets);
 
     T operator[](K key);
+    MapT& operator=(MapT const &other);
 
     int Size() { return numKeys; }
 
